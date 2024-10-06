@@ -7,10 +7,6 @@ const write = async () => {
 
   process.stdin.pipe(writeStream);
 
-  writeStream.on("finish", () => {
-    process.exit();
-  });
-
   writeStream.on("error", (err) => {
     console.error("FS operation failed:", err.message);
   });
